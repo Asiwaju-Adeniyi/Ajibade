@@ -3,7 +3,7 @@
 #include <cstdio> 
 #include <cuda_runtime.h>
 
-__global__ void PrintThreadIdx (int* PrintId) {
+__global__ void PrintTidKernel(int* PrintId) {
     int Idx = blockIdx.x * blockDim.x + threadIdx.x;
     PrintId[Idx] = Idx;}
 
